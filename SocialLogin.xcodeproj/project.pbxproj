@@ -96,6 +96,7 @@
 				TargetAttributes = {
 					01B451F81EB1DD7100061B56 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 37V52RJ6S5;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -260,9 +261,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 37V52RJ6S5;
 				INFOPLIST_FILE = SocialLogin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bertugyilmaz.SocialLogin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bertugyilmaz.SocialLogins;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -272,9 +274,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 37V52RJ6S5;
 				INFOPLIST_FILE = SocialLogin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bertugyilmaz.SocialLogin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bertugyilmaz.SocialLogins;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
