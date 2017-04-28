@@ -7,10 +7,8 @@
 //
 
 import UIKit
-import FBSDKCoreKit
 import FBSDKLoginKit
-import FBSDKShareKit
-import Alamofire
+//import Alamofire
 import SDWebImage
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
@@ -25,9 +23,14 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         if(FBSDKAccessToken.current() == nil){
+            print("---------------------------------------------------------------------------------------------------------")
             print("Not logged in ")
+            print("---------------------------------------------------------------------------------------------------------")
         }else{
+            print("---------------------------------------------------------------------------------------------------------")
             print("Logged in already")
+            print("---------------------------------------------------------------------------------------------------------")
+            getFacebookUserInfo()
         }
         
         FacebookButton.readPermissions = ["public_profile","email"]
@@ -46,16 +49,27 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             print("Something going is wrong?")
         }else{
             print("Log-in")
-            print("-----------------------------------")
-            //FBSDKGraphRequest.init(graphPath: "/me", parameters: )
+            getFacebookUserInfo()
        }
-        
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!){
         print("Log-out")
     }
-
-
+    
+    func getFacebookUserInfo(){
+        let params = ["fields" : "email, name"]
+        let graphRequest = FBSDKGraphRequest.init(graphPath: "/me", parameters: params)
+        
+        let Connection = FBSDKGraphRequestConnection()
+        
+        Connection.add(graphRequest) { (Connection, result, error) in
+            let info = result as! [String : AnyObject]
+            print("---------------------------------------------------------------------------------------------------------")
+            print(info)
+            print("---------------------------------------------------------------------------------------------------------")
+        }
+        Connection.start()
+    }
 }
 
