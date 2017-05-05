@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		017B04DE1EB38DD200728A20 /* linkedin-sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 017B04DD1EB38DD200728A20 /* linkedin-sdk.framework */; };
 		01B451FD1EB1DD7100061B56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B451FC1EB1DD7100061B56 /* AppDelegate.swift */; };
 		01B451FF1EB1DD7100061B56 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B451FE1EB1DD7100061B56 /* LoginViewController.swift */; };
 		01B452021EB1DD7100061B56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B452001EB1DD7100061B56 /* Main.storyboard */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		017B04D91EB38CF500728A20 /* SocialLogin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SocialLogin-Bridging-Header.h"; sourceTree = "<group>"; };
+		017B04DD1EB38DD200728A20 /* linkedin-sdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "linkedin-sdk.framework"; path = "SocialLogin/linkedin-sdk.framework"; sourceTree = "<group>"; };
 		01B451F91EB1DD7100061B56 /* SocialLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01B451FC1EB1DD7100061B56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01B451FE1EB1DD7100061B56 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +37,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D148A9CF7E49896DCC9C6B7 /* Pods_SocialLogin.framework in Frameworks */,
+				017B04DE1EB38DD200728A20 /* linkedin-sdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +51,7 @@
 				01B451FA1EB1DD7100061B56 /* Products */,
 				AF555CD8D3B57283737096A7 /* Pods */,
 				5B39F84DCE98EF35CFFB5AD2 /* Frameworks */,
+				017B04D91EB38CF500728A20 /* SocialLogin-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +79,7 @@
 		5B39F84DCE98EF35CFFB5AD2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				017B04DD1EB38DD200728A20 /* linkedin-sdk.framework */,
 				B3CE3167B0688BB6681C770A /* Pods_SocialLogin.framework */,
 			);
 			name = Frameworks;
@@ -124,6 +130,7 @@
 					01B451F81EB1DD7100061B56 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 37V52RJ6S5;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -337,11 +344,18 @@
 			baseConfigurationReference = FB630F67080FAF7FACAF6218 /* Pods-SocialLogin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 37V52RJ6S5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SocialLogin",
+				);
 				INFOPLIST_FILE = SocialLogin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bertugyilmaz.SocialLogins;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SocialLogin-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -351,11 +365,17 @@
 			baseConfigurationReference = F3966DCAFD8BC3EBBD95ABA1 /* Pods-SocialLogin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 37V52RJ6S5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SocialLogin",
+				);
 				INFOPLIST_FILE = SocialLogin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bertugyilmaz.SocialLogins;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SocialLogin-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

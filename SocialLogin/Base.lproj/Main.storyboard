@@ -70,6 +70,10 @@
                                     <constraint firstAttribute="height" constant="31" id="npb-pF-JoW"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFg-cN-HD6">
+                                <rect key="frame" x="66" y="441" width="243" height="31"/>
+                                <state key="normal" title="LinkedIn"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -80,18 +84,23 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Kuq-72-JEG" secondAttribute="bottom" constant="241" id="6QE-ls-93I"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5U9-vL-IRT" secondAttribute="trailing" constant="150" id="8jA-Lx-Ls3"/>
                             <constraint firstItem="5U9-vL-IRT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="150" id="FSJ-9g-pdU"/>
+                            <constraint firstItem="QFg-cN-HD6" firstAttribute="height" secondItem="Kuq-72-JEG" secondAttribute="height" id="FcY-Ti-Ywm"/>
+                            <constraint firstItem="QFg-cN-HD6" firstAttribute="trailing" secondItem="Kuq-72-JEG" secondAttribute="trailing" id="FxH-rW-i2E"/>
                             <constraint firstItem="MXV-He-dwZ" firstAttribute="top" secondItem="QgE-Un-esg" secondAttribute="bottom" constant="6" id="GNG-ci-gXX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QgE-Un-esg" secondAttribute="trailing" constant="50" id="Gv6-0U-QTX"/>
                             <constraint firstItem="MXV-He-dwZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="HSp-pj-1YJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Kuq-72-JEG" secondAttribute="trailing" constant="50" id="MBo-m3-7Pl"/>
                             <constraint firstItem="8RP-vv-HMU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="140" id="MX8-UG-cBi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8RP-vv-HMU" secondAttribute="trailing" constant="140" id="Mhi-li-3VM"/>
+                            <constraint firstItem="QFg-cN-HD6" firstAttribute="width" secondItem="Kuq-72-JEG" secondAttribute="width" id="PK1-JH-OTH"/>
                             <constraint firstItem="Kuq-72-JEG" firstAttribute="top" secondItem="5U9-vL-IRT" secondAttribute="bottom" constant="22" id="UTC-eu-MHO"/>
+                            <constraint firstItem="QFg-cN-HD6" firstAttribute="top" secondItem="Kuq-72-JEG" secondAttribute="bottom" constant="15" id="X7T-ie-t3N"/>
                             <constraint firstItem="5U9-vL-IRT" firstAttribute="top" secondItem="8RP-vv-HMU" secondAttribute="bottom" constant="20" id="Yfr-5w-kDf"/>
                             <constraint firstItem="QgE-Un-esg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="ZIf-yj-me7"/>
                             <constraint firstItem="XdU-HL-YP0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="ZQr-g9-1Us"/>
                             <constraint firstItem="8RP-vv-HMU" firstAttribute="top" secondItem="MXV-He-dwZ" secondAttribute="bottom" constant="26" id="d6Y-Sw-EVs"/>
                             <constraint firstItem="Kuq-72-JEG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="rbw-r1-sXn"/>
+                            <constraint firstItem="QFg-cN-HD6" firstAttribute="leading" secondItem="Kuq-72-JEG" secondAttribute="leading" id="sT9-pE-KkS"/>
                         </constraints>
                     </view>
                     <connections>
@@ -99,6 +108,7 @@
                         <outlet property="PasswordTextField" destination="MXV-He-dwZ" id="wod-8D-D0k"/>
                         <outlet property="UsernameTextField" destination="QgE-Un-esg" id="gsh-XD-kT9"/>
                         <outlet property="imageView" destination="XdU-HL-YP0" id="Eeu-XK-UaY"/>
+                        <outlet property="linkedButton" destination="QFg-cN-HD6" id="kfq-fG-8gf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
