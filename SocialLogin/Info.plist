@@ -43,9 +43,10 @@
             <key>CFBundleURLSchemes</key>
             <array>
                 <string>fb1675506616077302</string>
+                <string>li5149196</string>
             </array>
         </dict>
-            </array>
+    </array>
                 <key>FacebookAppID</key>
                 <string>1675506616077302</string>
                 <key>FacebookDisplayName</key>
@@ -53,6 +54,9 @@
 
             <key>LSApplicationQueriesSchemes</key>
             <array>
+                <string>linkedin</string>
+                <string>linkedin-sdk2</string>
+                <string>linkedin-sdk</string>
                 <string>fbapi</string>
                 <string>fb-messenger-api</string>
                 <string>fbauth2</string>
@@ -61,22 +65,6 @@
 
     <key>LIAppId</key>
     <string>5149196</string>
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>li5149196</string>
-            </array>
-        </dict>
-    </array>
-    
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>linkedin</string>
-        <string>linkedin-sdk2</string>
-        <string>linkedin-sdk</string>
-    </array>
     
     <key>NSAppTransportSecurity</key>
     <dict>
@@ -93,7 +81,6 @@
             </dict>
         </dict>
     </dict>
-    
     
 </dict>
 </plist>

@@ -51,7 +51,6 @@ class LoginViewController: UIViewController {
             print("Log-in")
             self.performSegue(withIdentifier: "mainMenu", sender: self)
         }
-        
     }
     
     func linkedinLoginAction(sender:UIButton){
