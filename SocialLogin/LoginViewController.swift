@@ -36,12 +36,22 @@ class LoginViewController: UIViewController {
             print("Logged in already")
             getFacebookUserInfo()
         }
-        
         imageView.sd_setImage(with: URL(string: imageURL), placeholderImage: UIImage(named: "placeholder.png"))
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func UserLogInAction(_ sender: Any) {
+        let userName = "bertug@test.com"
+        let userPassword = "test"
+        
+        if (userName == UsernameTextField.text || userPassword == PasswordTextField.text){
+            print("Log-in")
+            self.performSegue(withIdentifier: "mainMenu", sender: self)
+        }
+        
     }
     
     func linkedinLoginAction(sender:UIButton){
@@ -51,10 +61,11 @@ class LoginViewController: UIViewController {
                 return
             }
             self.AccessToken = session.accessToken
-         //   print("Token --> \(self.AccessToken)")
+         // print("Token --> \(self.AccessToken)")
             
             LISDKAPIHelper.sharedInstance().getRequest(url, success: { (response) in
                 print(response?.data as Any)
+                self.performSegue(withIdentifier: "mainMenu", sender: self)
             }, error: { (error) in
                 print(error as Any)
                })
