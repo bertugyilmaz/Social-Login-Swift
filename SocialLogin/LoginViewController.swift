@@ -75,27 +75,26 @@ class LoginViewController: UIViewController {
     }
     
     func getFacebookUserInfo(){
-        /* let loginManager = LoginManager()
+        let loginManager = LoginManager()
         loginManager.logIn([.publicProfile, .email ], viewController: self) { (result) in
             switch result{
-            case .failed(Error):
-                print(Error)
             case .cancelled:
                 print("Cancel button click")
-            case .success(grantedPermissions: Set<Permission>, declinedPermissions: Set<Permission>, token: AccessToken):
+            case .success:
+                let params = ["fields" : "email, name"]
+                let graphRequest = FBSDKGraphRequest.init(graphPath: "/me", parameters: params)
+                let Connection = FBSDKGraphRequestConnection()
                 
-            break
+                Connection.add(graphRequest) { (Connection, result, error) in
+                    let info = result as! [String : AnyObject]
+                    print(info)
+                self.performSegue(withIdentifier: "mainMenu", sender: self)
+                }
+                Connection.start()
+            default:
+                print("??")
             }
-        }*/
-        let params = ["fields" : "email, name"]
-        let graphRequest = FBSDKGraphRequest.init(graphPath: "/me", parameters: params)
-        let Connection = FBSDKGraphRequestConnection()
-        
-        Connection.add(graphRequest) { (Connection, result, error) in
-            let info = result as! [String : AnyObject]
-            print(info)
         }
-        Connection.start()
     }
 }
 
