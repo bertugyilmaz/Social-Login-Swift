@@ -9,22 +9,26 @@
 import UIKit
 import FBSDKLoginKit
 import SDWebImage
+import FacebookCore
+import FacebookLogin
 
-class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
+class LoginViewController: UIViewController {
     
-    let imageURL = "https://img.clipartfest.com/b68ba2ac07e002167057770f502dca3b_facebook-icon-vector-facebook-logo_512-512.png"
+    let imageURL = "https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png"
 
     @IBOutlet weak var linkedButton : UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var UsernameTextField: UITextField!
     @IBOutlet weak var PasswordTextField: UITextField!
-    @IBOutlet weak var FacebookButton: FBSDKLoginButton!
+    @IBOutlet weak var faacebookButton: UIButton!
+    
     var AccessToken: LISDKAccessToken!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.linkedButton.addTarget(self, action: #selector(linkedinLoginAction), for: .touchUpInside)
+        self.faacebookButton.addTarget(self, action: #selector(getFacebookUserInfo), for: .touchUpInside)
         
         if(FBSDKAccessToken.current() == nil){
             print("Not logged in ")
@@ -33,9 +37,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             getFacebookUserInfo()
         }
         
-        FacebookButton.readPermissions = ["public_profile","email"]
-        FacebookButton.delegate = self
-        
         imageView.sd_setImage(with: URL(string: imageURL), placeholderImage: UIImage(named: "placeholder.png"))
     }
 
@@ -43,47 +44,44 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         super.didReceiveMemoryWarning()
     }
     
-    
     func linkedinLoginAction(sender:UIButton){
         LISDKSessionManager.createSession(withAuth: [LISDK_BASIC_PROFILE_PERMISSION], state: "", showGoToAppStoreDialog: true, successBlock: { (response : String?) in
-            let url = "https://api.linkedin.com/v1/people/~?format=json"
+            let url = "https://api.linkedin.com/v1/people/~"
             guard let session = LISDKSessionManager.sharedInstance().session else{
                 return
             }
             self.AccessToken = session.accessToken
-            print("Token --> \(self.AccessToken)")
+         //   print("Token --> \(self.AccessToken)")
             
             LISDKAPIHelper.sharedInstance().getRequest(url, success: { (response) in
-                print(response?.headers)
+                print(response?.data as Any)
             }, error: { (error) in
-                print(error)
-            })
-        }) { (error:Error?) in
+                print(error as Any)
+               })
+            }) { (error:Error?) in
             print(error as Any)
         }
     }
     
-    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!){
-        if((error) != nil){
-            print("Something going is wrong?")
-        }else{
-            print("Log-in")
-            getFacebookUserInfo()
-       }
-    }
-    
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!){
-        print("Log-out")
-    }
-    
     func getFacebookUserInfo(){
+        /* let loginManager = LoginManager()
+        loginManager.logIn([.publicProfile, .email ], viewController: self) { (result) in
+            switch result{
+            case .failed(Error):
+                print(Error)
+            case .cancelled:
+                print("Cancel button click")
+            case .success(grantedPermissions: Set<Permission>, declinedPermissions: Set<Permission>, token: AccessToken):
+                
+            break
+            }
+        }*/
         let params = ["fields" : "email, name"]
         let graphRequest = FBSDKGraphRequest.init(graphPath: "/me", parameters: params)
         let Connection = FBSDKGraphRequestConnection()
         
         Connection.add(graphRequest) { (Connection, result, error) in
             let info = result as! [String : AnyObject]
-            
             print(info)
         }
         Connection.start()

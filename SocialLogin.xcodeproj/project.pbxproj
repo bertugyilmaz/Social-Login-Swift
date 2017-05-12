@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		017B04D91EB38CF500728A20 /* SocialLogin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SocialLogin-Bridging-Header.h"; sourceTree = "<group>"; };
+		017B04D91EB38CF500728A20 /* SocialLogin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SocialLogin-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		017B04DD1EB38DD200728A20 /* linkedin-sdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "linkedin-sdk.framework"; path = "SocialLogin/linkedin-sdk.framework"; sourceTree = "<group>"; };
 		01B451F91EB1DD7100061B56 /* SocialLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01B451FC1EB1DD7100061B56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,7 +51,6 @@
 				01B451FA1EB1DD7100061B56 /* Products */,
 				AF555CD8D3B57283737096A7 /* Pods */,
 				5B39F84DCE98EF35CFFB5AD2 /* Frameworks */,
-				017B04D91EB38CF500728A20 /* SocialLogin-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +65,7 @@
 		01B451FB1EB1DD7100061B56 /* SocialLogin */ = {
 			isa = PBXGroup;
 			children = (
+				017B04D91EB38CF500728A20 /* SocialLogin-Bridging-Header.h */,
 				01B451FC1EB1DD7100061B56 /* AppDelegate.swift */,
 				01B451FE1EB1DD7100061B56 /* LoginViewController.swift */,
 				01B452001EB1DD7100061B56 /* Main.storyboard */,
