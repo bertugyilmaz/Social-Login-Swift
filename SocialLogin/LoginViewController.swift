@@ -60,7 +60,7 @@ class LoginViewController: UIViewController {
                 return
             }
             self.AccessToken = session.accessToken
-         // print("Token --> \(self.AccessToken)")
+            print("Token --> \(self.AccessToken)")
             
             LISDKAPIHelper.sharedInstance().getRequest(url, success: { (response) in
                 print(response?.data as Any)
@@ -80,7 +80,7 @@ class LoginViewController: UIViewController {
             case .cancelled:
                 print("Cancel button click")
             case .success:
-                let params = ["fields" : "email, name"]
+                let params = ["fields" : "id, name, first_name, last_name, picture.type(large), email "]
                 let graphRequest = FBSDKGraphRequest.init(graphPath: "/me", parameters: params)
                 let Connection = FBSDKGraphRequestConnection()
                 
