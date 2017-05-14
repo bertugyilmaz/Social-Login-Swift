@@ -6,6 +6,5 @@ target 'SocialLogin' do	use_frameworks!
 	pod 'SDWebImage', '~>3.8'
 	pod 'FacebookCore'
 	pod 'FacebookLogin'
-	pod 'AIFlatSwitch', '~> 1.0.1'
 
 end

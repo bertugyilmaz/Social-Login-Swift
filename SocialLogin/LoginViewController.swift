@@ -54,8 +54,9 @@ class LoginViewController: UIViewController {
     }
     
     func linkedinLoginAction(sender:UIButton){
-        LISDKSessionManager.createSession(withAuth: [LISDK_BASIC_PROFILE_PERMISSION], state: "", showGoToAppStoreDialog: true, successBlock: { (response : String?) in
-            let url = "https://api.linkedin.com/v1/people/~"
+        LISDKSessionManager.createSession(withAuth: [LISDK_BASIC_PROFILE_PERMISSION], state: "", showGoToAppStoreDialog: true, successBlock: { (response) in
+            let url = "https://api.linkedin.com/v1/people/~:(id,first-name,last-name,email-address,picture-url,picture-urls::(original),positions,date-of-birth,phone-numbers,location)?format=json"
+           
             guard let session = LISDKSessionManager.sharedInstance().session else{
                 return
             }
@@ -63,7 +64,9 @@ class LoginViewController: UIViewController {
             print("Token --> \(self.AccessToken)")
             
             LISDKAPIHelper.sharedInstance().getRequest(url, success: { (response) in
-                print(response?.data as Any)
+                let data: Data? = response?.data.data(using: String.Encoding.utf8)
+                let dictResponse = (try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)) as? [String : Any]
+                
                 self.performSegue(withIdentifier: "mainMenu", sender: self)
             }, error: { (error) in
                 print(error as Any)
@@ -86,7 +89,7 @@ class LoginViewController: UIViewController {
                 
                 Connection.add(graphRequest) { (Connection, result, error) in
                     let info = result as! [String : AnyObject]
-                    print(info)
+                    print(info["name"] as! String)
                 self.performSegue(withIdentifier: "mainMenu", sender: self)
                 }
                 Connection.start()
