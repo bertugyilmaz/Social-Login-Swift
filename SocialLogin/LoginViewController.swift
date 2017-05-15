@@ -65,7 +65,11 @@ class LoginViewController: UIViewController {
             
             LISDKAPIHelper.sharedInstance().getRequest(url, success: { (response) in
                 let data: Data? = response?.data.data(using: String.Encoding.utf8)
-                let dictResponse = (try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)) as? [String : Any]
+                let dictResponse : [AnyHashable : Any]? = (try? JSONSerialization.jsonObject(with: data!, options: .allowFragments)) as? [String : Any]
+                let fName : String? = "\(dictResponse?["firstName"] as! String)"
+                let lName : String? = "\(dictResponse?["lastName"] as! String)"
+                
+                print("\(fName, lName)")
                 
                 self.performSegue(withIdentifier: "mainMenu", sender: self)
             }, error: { (error) in

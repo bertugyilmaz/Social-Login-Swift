@@ -36,51 +36,46 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>fb1675506616077302</string>
-                <string>li5149196</string>
-            </array>
-        </dict>
-    </array>
-                <key>FacebookAppID</key>
-                <string>1675506616077302</string>
-                <key>FacebookDisplayName</key>
-                <string>Social Login</string>
-
-            <key>LSApplicationQueriesSchemes</key>
-            <array>
-                <string>linkedin</string>
-                <string>linkedin-sdk2</string>
-                <string>linkedin-sdk</string>
-                <string>fbapi</string>
-                <string>fb-messenger-api</string>
-                <string>fbauth2</string>
-                <string>fbshareextension</string>
-            </array>
-
-    <key>LIAppId</key>
-    <string>5149196</string>
-    
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSExceptionDomains</key>
-        <dict>
-            <key>linkedin.com</key>
-            <dict>
-                <key>NSExceptionAllowsInsecureHTTPLoads</key>
-                <true/>
-                <key>NSIncludesSubdomains</key>
-                <true/>
-                <key>NSExceptionRequiresForwardSecrecy</key>
-                <false/>
-            </dict>
-        </dict>
-    </dict>
-    
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1675506616077302</string>
+				<string>li5149196</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>1675506616077302</string>
+	<key>FacebookDisplayName</key>
+	<string>Social Login</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>linkedin</string>
+		<string>linkedin-sdk2</string>
+		<string>linkedin-sdk</string>
+		<string>fbapi</string>
+		<string>fb-messenger-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
+	<key>LIAppId</key>
+	<string>5149196</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>linkedin.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false/>
+			</dict>
+		</dict>
+	</dict>
 </dict>
 </plist>
